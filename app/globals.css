@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -10,17 +10,78 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-serif);
+  
+  --color-stone-light: #ffffff;
+  --color-stone-dark: #0f172a;
+  --color-sage: #e11d48;
+  --color-sage-light: #fb7185;
+  --color-sand: #f59e0b;
+  --color-sand-dark: #d97706;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Fail-safe brand color classes to guarantee compilation */
+.bg-sage {
+  background-color: #e11d48;
+}
+.bg-sage-light {
+  background-color: #fb7185;
+}
+.text-sage {
+  color: #e11d48;
+}
+.text-sage-light {
+  color: #fb7185;
+}
+.border-sage {
+  border-color: #e11d48;
+}
+.bg-sand {
+  background-color: #f59e0b;
+}
+.bg-sand-dark {
+  background-color: #d97706;
+}
+.text-sand {
+  color: #f59e0b;
+}
+.text-sand-dark {
+  color: #d97706;
+}
+.border-sand {
+  border-color: #f59e0b;
+}
+.text-stone-light {
+  color: #ffffff;
+}
+.text-stone-dark {
+  color: #0f172a;
+}
+.bg-stone-light {
+  background-color: #ffffff;
+}
+.bg-stone-dark {
+  background-color: #0f172a;
+}
+
+/* Custom scrollbar for premium editorial experience */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
 }
