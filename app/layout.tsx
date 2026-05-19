@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistMono.variable} ${playfair.variable} min-h-screen bg-base text-ink antialiased selection:bg-accent selection:text-white`}>
+      <body className={`${geistMono.variable} ${playfair.variable} min-h-screen bg-base text-ink antialiased selection:bg-accent selection:text-white overflow-x-hidden w-full max-w-[100vw] relative`}>
         {children}
       </body>
     </html>

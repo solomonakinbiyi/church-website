@@ -33,7 +33,7 @@ export default function Navbar() {
         {/* Main Nav */}
         <div className="px-6 md:px-8 flex items-center justify-between h-20 md:h-24">
           
-          <div className="flex-1 flex items-center">
+          <div className="flex items-center md:flex-1">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-[10px] font-mono tracking-[0.2em] uppercase hover:text-accent transition-colors flex items-center gap-2"
@@ -42,16 +42,16 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="flex-1 text-center">
+          <div className="text-center md:flex-1">
             <Link href="/" className="font-serif text-3xl md:text-4xl italic tracking-tight text-ink hover:text-accent transition-colors">
               Sanctuary
             </Link>
           </div>
 
-          <div className="flex-1 flex justify-end gap-6 items-center">
+          <div className="hidden md:flex flex-1 justify-end gap-6 items-center">
             <Link
               href="#give"
-              className="hidden md:block text-[10px] font-mono tracking-[0.2em] uppercase hover:text-accent transition-colors"
+              className="text-[10px] font-mono tracking-[0.2em] uppercase hover:text-accent transition-colors"
             >
               Give
             </Link>
@@ -78,6 +78,13 @@ export default function Navbar() {
                   {item}
                 </Link>
               ))}
+              <Link
+                href="#visit"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-6 text-[9px] font-mono tracking-[0.2em] uppercase bg-ink text-base px-6 py-4 hover:bg-accent hover:text-base transition-colors inline-block mx-auto"
+              >
+                Plan a Visit
+              </Link>
             </nav>
           </div>
         )}
