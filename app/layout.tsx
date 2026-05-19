@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
+import { Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Sanctuary | A Community of Faith & Serenity",
-  description: "A modern architectural church community exploring faith, community, and radical grace in our city.",
+  title: "Sanctuary | The Gathering",
+  description: "A space for authentic community and radical grace.",
 };
 
 export default function RootLayout({
@@ -30,11 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[#f8f7f5] text-[#121212] selection:bg-[#d1c9b6] selection:text-[#121212]">
+    <html lang="en" className="scroll-smooth">
+      <body className={`${geistMono.variable} ${playfair.variable} min-h-screen bg-base text-ink antialiased selection:bg-accent selection:text-white`}>
         {children}
       </body>
     </html>

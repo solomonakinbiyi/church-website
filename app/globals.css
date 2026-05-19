@@ -1,87 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #F5F3EC;
+  --foreground: #0F0F0F;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-serif);
+  --color-base: #F5F3EC;
+  --color-ink: #0F0F0F;
+  --color-ink-light: #4A4A4A;
+  --color-accent: #B84A30;
+  --color-grid: rgba(15, 15, 15, 0.12);
+  --color-grid-hover: rgba(15, 15, 15, 0.3);
   
-  --color-stone-light: #ffffff;
-  --color-stone-dark: #0f172a;
-  --color-sage: #e11d48;
-  --color-sage-light: #fb7185;
-  --color-sand: #f59e0b;
-  --color-sand-dark: #d97706;
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
+  background: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-serif), serif; /* We will use serif as the primary body font for extreme elegance */
   overflow-x: hidden;
 }
 
-/* Fail-safe brand color classes to guarantee compilation */
-.bg-sage {
-  background-color: #e11d48;
-}
-.bg-sage-light {
-  background-color: #fb7185;
-}
-.text-sage {
-  color: #e11d48;
-}
-.text-sage-light {
-  color: #fb7185;
-}
-.border-sage {
-  border-color: #e11d48;
-}
-.bg-sand {
-  background-color: #f59e0b;
-}
-.bg-sand-dark {
-  background-color: #d97706;
-}
-.text-sand {
-  color: #f59e0b;
-}
-.text-sand-dark {
-  color: #d97706;
-}
-.border-sand {
-  border-color: #f59e0b;
-}
-.text-stone-light {
-  color: #ffffff;
-}
-.text-stone-dark {
-  color: #0f172a;
-}
-.bg-stone-light {
-  background-color: #ffffff;
-}
-.bg-stone-dark {
-  background-color: #0f172a;
-}
+/* Fail-safe classes */
+.bg-base { background-color: #F5F3EC; }
+.bg-ink { background-color: #0F0F0F; }
+.bg-accent { background-color: #B84A30; }
+.text-base { color: #F5F3EC; }
+.text-ink { color: #0F0F0F; }
+.text-accent { color: #B84A30; }
+.border-grid { border-color: rgba(15, 15, 15, 0.12); }
+.border-ink { border-color: #0F0F0F; }
 
-/* Custom scrollbar for premium editorial experience */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #F5F3EC;
+  border-left: 1px solid rgba(15,15,15,0.1);
 }
 ::-webkit-scrollbar-thumb {
-  background: #f59e0b;
-  border-radius: 3px;
+  background: #0F0F0F;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #d97706;
+  background: #B84A30;
+}
+
+/* Utility to hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -7,104 +7,69 @@ import FadeIn from './FadeIn';
 export default function NextStepsGrid() {
   const steps = [
     {
-      num: "01",
+      id: "I",
       title: "Life Groups",
-      tagline: "Grow in circles, not rows.",
-      description: "Faith is best lived out in community. Join a small group in your local neighborhood to share meals, study scripture, and support one another through life.",
-      cta: "Find your group",
-      link: "#connect"
+      description: "Faith is best lived out in community. Join a small group in your neighborhood.",
+      link: "#connect",
     },
     {
-      num: "02",
-      title: "Serve & Support",
-      tagline: "Be part of the difference.",
-      description: "Use your unique gifts to serve. Whether you want to welcome guests on Sunday mornings, run audio/visual tech, or join our city outreach teams.",
-      cta: "Join a serve team",
-      link: "#connect"
+      id: "II",
+      title: "Serve",
+      description: "Use your unique gifts to serve. Welcome guests, or join city outreach teams.",
+      link: "#connect",
     },
     {
-      num: "03",
+      id: "III",
       title: "Ministries",
-      tagline: "Tailored spiritual spaces.",
-      description: "Dedicated gatherings and teaching structures for children, middle & high school students, young adults, men, and women at all stages of life.",
-      cta: "Explore ministries",
-      link: "#connect"
+      description: "Dedicated spiritual gatherings for children, students, men, and women.",
+      link: "#connect",
     }
   ];
 
   return (
-    <section id="connect" className="py-24 md:py-32 bg-stone-light border-b border-slate-200 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <FadeIn direction="up" className="mb-16 md:mb-24 text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-semibold tracking-widest uppercase text-sage">
-            Take Your Next Step
+    <section id="connect" className="bg-base border-b border-grid">
+      
+      {/* Header Area */}
+      <div className="p-8 md:p-16 border-b border-grid">
+        <FadeIn direction="up">
+          <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-ink-light block mb-6">
+            Next Steps
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-light tracking-tight text-stone-dark mt-4">
-            Belonging means participating.
+          <h2 className="font-serif text-5xl md:text-7xl text-ink">
+            Belonging means <span className="italic text-accent">participating.</span>
           </h2>
-          <p className="text-sm font-light text-stone-dark/70 mt-4 leading-relaxed">
-            There are many ways to engage with Sanctuary beyond Sunday mornings. Find a circle, join a service team, or dive into one of our community ministries.
-          </p>
         </FadeIn>
+      </div>
 
-        {/* Editorial Divided Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border border-slate-200 bg-white divide-y md:divide-y-0 md:divide-x divide-slate-200 shadow-xs">
-          {steps.map((step, idx) => (
-            <div
-              key={step.num}
-              className="p-8 md:p-12 flex flex-col justify-between group hover:bg-white/40 transition-colors duration-500 min-h-[420px]"
-            >
-              <div className="space-y-6">
-                {/* Number & Header */}
-                <div className="flex justify-between items-baseline">
-                  <span className="font-serif text-5xl font-extralight text-sage/30 group-hover:text-sage transition-colors duration-500">
-                    {step.num}
-                  </span>
-                  <span className="text-[10px] tracking-widest uppercase font-light text-stone-dark/40">
-                    SANCTUARY / {step.num}
-                  </span>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="font-serif text-2xl font-light text-stone-dark">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs tracking-wider uppercase font-semibold text-sage">
-                    {step.tagline}
-                  </p>
-                </div>
-
-                <p className="text-sm font-light text-stone-dark/70 leading-relaxed">
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-grid">
+        {steps.map((step, idx) => (
+          <div key={step.id} className="p-8 md:p-16 flex flex-col group hover:bg-ink transition-colors duration-500 min-h-[400px]">
+            <FadeIn direction="up" delay={idx * 150} className="h-full flex flex-col justify-between">
+              <div>
+                <span className="font-serif text-6xl text-grid-hover group-hover:text-base/20 transition-colors block mb-12">
+                  {step.id}
+                </span>
+                <h3 className="font-serif text-4xl text-ink group-hover:text-base transition-colors mb-6">
+                  {step.title}
+                </h3>
+                <p className="font-mono text-[11px] leading-relaxed tracking-wider text-ink-light group-hover:text-base/70 transition-colors">
                   {step.description}
                 </p>
               </div>
 
-              {/* Action Link */}
-              <div className="pt-8">
+              <div className="pt-12">
                 <Link
                   href={step.link}
-                  className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-stone-dark hover:text-sage group-hover:translate-x-1 transition-all duration-300"
+                  className="font-mono text-[9px] tracking-[0.2em] uppercase text-ink group-hover:text-base flex items-center gap-4 transition-colors"
                 >
-                  <span>{step.cta}</span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                    />
-                  </svg>
+                  <span className="w-8 h-[1px] bg-ink group-hover:bg-base transition-colors" />
+                  Explore
                 </Link>
               </div>
-            </div>
-          ))}
-        </div>
+            </FadeIn>
+          </div>
+        ))}
       </div>
     </section>
   );
