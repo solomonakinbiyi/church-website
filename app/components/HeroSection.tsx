@@ -46,7 +46,7 @@ export default function HeroSection() {
         {/* Right: Architectural Imagery */}
         <div className="flex-1 relative min-h-[40vh] lg:min-h-full">
           <img
-            src="https://images.unsplash.com/photo-1548625361-1a3b12f71826?q=80&w=2600"
+            src="/hero_architecture.png"
             alt="Church Architecture"
             className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125"
           />
